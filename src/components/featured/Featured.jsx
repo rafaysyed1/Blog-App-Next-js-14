@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "./navbar.module.css"
+import styles from "./featured.module.css"
 
-const Navbar = ()=>{
+const Featured = ()=>{
     return (
         <div className={styles.container}>
-        Navbar
+        Featured
         </div>
     )
 }
 
-export default Navbar 
+export default Featured 

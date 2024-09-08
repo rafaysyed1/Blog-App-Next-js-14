@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "./navbar.module.css"
+import styles from "./menu.module.css"
 
-const Navbar = ()=>{
+const Menu = ()=>{
     return (
         <div className={styles.container}>
-        Navbar
+        Menu
         </div>
     )
 }
 
-export default Navbar 
+export default Menu 

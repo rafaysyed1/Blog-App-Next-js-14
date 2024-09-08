@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "./navbar.module.css"
+import styles from "./footer.module.css"
 
-const Navbar = ()=>{
+const Footer = ()=>{
     return (
         <div className={styles.container}>
-        Navbar
+        Footer
         </div>
     )
 }
 
-export default Navbar 
+export default Footer 
