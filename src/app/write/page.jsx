@@ -10,7 +10,7 @@ const Write = () => {
     const [value, setValue] = useState("");
     return (
         <div className={styles.container}>
-            <input type="text" placeholder="Title" />
+            <input type="text" placeholder="Title" className={styles.input} />
 
             <div className={styles.editor}>
                 <button className={styles.button}  onClick={() => setOpen(!open)}>
@@ -19,13 +19,13 @@ const Write = () => {
 
                 {open && (
                     <div className={styles.add}>
-                        <button className={styles.addbutton}>
+                        <button className={styles.addButton}>
                             <Image alt="" src="/image.png" width={16} height={16} />
                         </button>
-                        <button className={styles.addbutton}>
+                        <button className={styles.addButton}>
                             <Image alt="" src="/external.png" width={16} height={16} />
                         </button>
-                        <button className={styles.addbutton}>
+                        <button className={styles.addButton}>
                             <Image alt="" src="/video.png" width={16} height={16} />
                         </button>
                     </div>
@@ -33,6 +33,7 @@ const Write = () => {
 
                 <ReactQuill className={styles.textArea} value={value} onChange={setValue} theme="bubble" placeholder="Apna Blog likhna shoru karo..." />
             </div>
+            <button className={styles.publish}>Publish</button>
         </div>
     )
 }
