@@ -6,7 +6,11 @@ import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
     const [open,setOpen] = useState(false);
-    const {status} = useSession()
+    const {status} = useSession();
+
+    const handleLogout = async () => {
+        await signOut({ redirect: false });
+    };
     return (
         <>
             {status === "unauthenticated" ? (
@@ -18,7 +22,9 @@ const AuthLinks = () => {
                     <Link href="/write" className="styles.link">
                         Write
                     </Link>
-                    <span className={styles.link}>Logout</span>
+                    <span className={styles.link} onClick={(e)=>{
+                        console.log("Span clicked!",e); // Debug log
+                        handleLogout();}}>Logout</span>
                 </>
             )}
             <div className={styles.burger} onClick={()=>{
@@ -42,7 +48,11 @@ const AuthLinks = () => {
                     <Link href="/write">
                         Write
                     </Link>
-                    <span className={styles.link} onClick={signOut}>Logout</span>
+                    <button className={styles.link} onClick={(e)=>{
+                        console.log("Span clicked!",e); // Debug log
+                        handleLogout();}}>
+                        Logout
+                    </button>
                 </>
             )}
                 </div>
